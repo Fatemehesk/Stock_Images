@@ -18,15 +18,15 @@ npm install
 
 npm start
 
-4. **Features**
+3. **Features**
 
    
 Fetch and display stock images from Firebase.
 Add new images to the Firebase database.
 
-6. **Firebase authentication for user login**
+4. **Firebase authentication for user login**
    
-8. **Technologies Used**
+5. **Technologies Used**
    
 React - JavaScript library for building user interfaces.
 Bootstrap - A popular CSS framework for building responsive and mobile-first websites.
