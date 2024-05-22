@@ -1,0 +1,22 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-title {
+  
+    display: flex;
+    font-size: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  
+  }
+  .card-time{
+color:rgb(56, 149, 255);
+  }

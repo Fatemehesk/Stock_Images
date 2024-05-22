@@ -48,11 +48,11 @@ const UploadForm = () => {
       return !!Object.values(inputs).some(input => !input)
     }, [inputs])
     return (
-      isVisible && <>
-      <p className="display-6 text-center mb-3">Upload Stock Image</p>
-      <div className="mb-5 d-flex align-items-center justify-content-center">
+      isVisible && <div className="flex w-100  ">
+      <p className=" text-center mb-3 font-weight-bold text-uppercase  fs-4 ms-5 ">Upload Stock Image</p>
+      <div className="mb-5 d-flex align-items-center justify-content-center col-12">
       <Preview />
-      <form className="mb-2" style={{ textAlign: "left" }} onSubmit={handleOnSubmit}>
+      <form className="mb-2 w-75" style={{ textAlign: "left" }} onSubmit={handleOnSubmit}>
           <div className="mb-3">
             <input
               type="text"
@@ -75,7 +75,7 @@ const UploadForm = () => {
           </button>
         </form>
       </div>
-      </>
+      </div>
     );
   };
 export default UploadForm;  

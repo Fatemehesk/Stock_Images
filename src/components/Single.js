@@ -10,8 +10,8 @@ function Single() {
     debugger
     return(
        <>
-        <button className="btn btn-link" onClick={() => navigate(-1)}>Back</button>
-        <div className="d-flex justify-content-center mb-5">
+        <button className="btn btn-link font-weight-bold" onClick={() => navigate(-1)}>Back</button>
+        <div className="d-flex justify-content-center mb-5 col-12 w-100">
             <Card  {...item}/>
         </div>
        </>
