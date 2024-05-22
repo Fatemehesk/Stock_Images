@@ -2,7 +2,11 @@
 
 A React-based Stock Images App that fetches and adds data to Firebase. The app features Firebase authentication and is styled using Bootstrap.
 
-## Getting Started
+## Live Demo
+
+Check out the live demo [here](https://firestock-f8791.web.app).
+
+### Getting Started
 
 To get a local copy up and running, follow these simple steps:
 
