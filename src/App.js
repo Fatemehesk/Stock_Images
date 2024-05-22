@@ -1,8 +1,6 @@
 import {  useMemo, useContext, useEffect } from "react";
 import { Context } from "./context/FirestoreContext"
-import Firestore from "./handlers/firestore";
 import { useAuthContext } from "./context/AuthContext"
-import Card from "./components/Card";
 import List from "./components/List"
 import "./App.css";
 
@@ -11,20 +9,20 @@ function App() {
   const { state, read } = useContext(Context)
   const { authenticate } = useAuthContext()
   const count = useMemo(() => {
-    return `you have ${state.items.length} image${state.items.length > 1 ? 's': ''}`
+    return `Explore  ${state.items.length} image${state.items.length > 1 ? 's': ''}`
   }, [state.items])
 
   useEffect(() => {
     read()
     authenticate()
-  }, [])
+  }, []);
 
   return (
-    <>
-      <h1 className="text-center">Gallery</h1>
-      {count}
-      <List items={state.items}/>
-    </>
+    <div className="main container mt-5">
+    <h1 className="text-center mb-4">IMAGE SHOWCASE</h1>
+    <p className="text-center text-muted fs-5 ">{count}</p>
+    <List items={state.items} />
+  </div>
   );
  
 }

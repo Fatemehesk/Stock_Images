@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { useFirestoreContext } from "../context/FirestoreContext"
-
+import "./navbar.css";
 const LogIn = () => {
   const { login, currentUser } = useAuthContext();
   return (
@@ -29,11 +29,10 @@ function Navigation() {
   const { currentUser } = useAuthContext();
   const { pathname } = useLocation();
   return (
-    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-      {/* remove all links except HOME */}
+    <ul className="navbar-nav me-5 mb-2 mb-lg-0 ">
       <li className="nav-item">
         <Link
-          className={`nav-link ${pathname === "/" ? "active" : ""}`}
+          className={`nav-link text-light ${pathname === "/" ? "active" : ""}`}
           aria-current="page"
           to="/"
         >
@@ -41,9 +40,9 @@ function Navigation() {
         </Link>
       </li>
       {currentUser && (
-        <li className="nav-item">
+        <li className="nav-item ">
           <Link
-            className={`nav-link ${
+            className={`nav-link text-light ${
               pathname === "/stockimages" ? "active" : ""
             }`}
             aria-current="page"
@@ -56,7 +55,7 @@ function Navigation() {
         {currentUser && (
         <li className="nav-item">
           <Link
-            className={`nav-link ${
+            className={`nav-link text-light ${
               pathname === "/profile" ? "active" : ""
             }`}
             aria-current="page"
@@ -90,7 +89,7 @@ function SearchForm() {
         placeholder="Search"
         aria-label="Search"
       />
-      <button className="btn btn-outline-success" type="submit">
+      <button className="btn btn-outline-success text-light" type="submit">
         Search
       </button>
     </form>
@@ -118,9 +117,7 @@ function Dropdown() {
     );
   }, [currentUser]);
   return (
-    <ul className="navbar-nav mb-2 mb-lg-0">
-      {" "}
-      {/* remove ms-auto */}
+  <ul className="navbar-nav mb-2 mb-lg-0 ms-auto me-5">
       <li className="nav-item dropdown">
         <a
           className="nav-link dropdown-toggle"
@@ -132,20 +129,17 @@ function Dropdown() {
         >
           {avatar}
         </a>
-        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul className="dropdown-menu dropdown-menu-end bg-light" aria-labelledby="navbarDropdown">
           {currentUser && (
             <li>
-              <a className="dropdown-item text-center" href="#">
-                <Link to="/profile">{username}</Link>
-              </a>
-              <li>
-                <hr className="dropdown divider" />
-              </li>
+              <Link className="dropdown-item text-center" to="/profile">{username}</Link>
             </li>
           )}
+          <li>
+            <hr className="dropdown-divider" />
+          </li>
           <div className="d-flex justify-content-center">
-            <LogIn />
-            <LogOut />
+            {currentUser ? <LogOut /> : <LogIn />}
           </div>
         </ul>
       </li>
@@ -155,9 +149,9 @@ function Dropdown() {
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <nav className="custom-navbar navbar navbar-expand-lg navbar-light  mb-5">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand text-light" href="#">
           ⚡ Firestock
         </a>
         <button
